@@ -1,3 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Problems</title>
+</head>
+<body>
+    <h1>Problem List</h1>
+    <ul>
+        {% for id, title in problems %}
+            <li>
+                <a href="{{ url_for('problem_detail', problem_id=id) }}">{{ title }}</a>
+                <form action="{{ url_for('delete_problem', problem_id=id) }}" method="post" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete this problem?');">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,3 +35,4 @@
     </ul>
 </body>
 </html>
+-->

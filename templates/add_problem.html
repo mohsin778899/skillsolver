@@ -1,3 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Add Problem - SkillSolver{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Add a New Problem</h2>
+
+<form method="post">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title:</label>
+    <input type="text" class="form-control" id="title" name="title" required />
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Problem</button>
+  <a href="{{ url_for('problems') }}" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+{% endblock %}
+
+
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,3 +39,4 @@
     </form>
 </body>
 </html>
+-->
